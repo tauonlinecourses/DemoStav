@@ -1,0 +1,324 @@
+/*documentFonts*/
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+
+:root{
+    --MainColor:#CC2E36;
+    --BoxBorderWidth: 5px;
+    --paddingSize:1em;
+}
+body{
+    direction: rtl;
+    font-family: 'Assistant', sans-serif;
+    margin: 0px;
+}
+
+p{
+    font-size: 1.3em;
+    font-weight: 500;
+    word-spacing: 0.16em;
+}
+
+.backgroundImg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+}
+.background_ParallaxEffect {
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    }
+.screen{
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+strong{
+    color:var(--MainColor);
+}
+
+.GridLayout{
+    display: grid;
+}
+.GridLayout.equal2ChildWidth{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.flyBox{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 0em 1.2em;
+}
+
+.centerBox{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    WIDTH: fit-content;
+    PADDING: 1EM;
+}
+
+.box50presentWidth{
+    width: 50%;
+    max-width: 30em;
+}
+
+.BoxTopBorder{
+    border-top: var(--MainColor) solid var(--BoxBorderWidth);
+}
+.BoxBottomBorder{
+    border-bottom: var(--MainColor) solid var(--BoxBorderWidth);
+}
+
+.textCenter{
+    text-align: center;
+}
+
+p.spanAsNewline span:not(.notNewLine){
+    display: block;
+}
+
+.blockSpacing{
+    padding: 10%;
+}
+
+.GridLayout.textNextToImg2for1{
+    grid-template-columns: 2fr 1fr;
+    padding: 5%;
+    gap: 5%;
+    align-items: center;
+}
+
+.Bookmark{
+    height: 100%;
+    position: absolute;
+    background: var(--MainColor);
+    width: 2em;
+}
+
+.right{
+    right: 0px;
+}
+
+.bigFont{
+    font-size: 1.8em;
+}
+.paddingAll{
+    padding: var(--paddingSize);
+}
+
+.imgWithCation{
+    position: relative;
+}
+
+.imgWithCation img{
+    height: 60vh;
+}
+
+.caption, .imgWithCation p{
+    font-size: 0.8em;
+    width: 60%;
+    position: absolute;
+    margin: 0px;
+}
+
+.imgWithCation.small img{
+    height: 40vh;
+}
+.imgWithCation.center p{
+    position: relative;
+    margin: 0px auto;
+}
+
+
+.sceenFlexTemp{
+    grid-template-columns: 2fr 1fr;
+    padding: max(5%,3em);
+    gap: 5%;
+    align-items: center;
+    display: flex;
+    gap: 5%;
+    align-items: center;
+}
+
+.h3Title{
+    color: #CC2E36;
+    margin-bottom: 0.5em;
+}
+.card{
+    background-color: #ebddb6;
+    padding: 1px 2em;
+    border-radius: 5px;
+    display: inline-block;
+}
+.card p {
+    margin-top: 0.2em;
+}
+.addQeustion::before{
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    position: absolute;
+    right: 0;
+}
+.addQeustion{
+    padding-right: 1.7em;
+    position: relative;
+}
+
+.Bookmark-Horizonal {
+    width: 100%;
+    position: absolute;
+    background: var(--MainColor);
+    height: 2vh;
+    z-index: -1;
+}
+
+.bookmarkHorizontalPoistion1{
+    top: calc( 50% - 6em);
+}    
+
+/*phone Version*/
+@media only screen and (max-width: 720px) {
+    .sceenFlexTemp{
+        flex-wrap: wrap;
+    }   
+    .imgWithCation {
+        margin: auto;
+        margin-bottom: 1em;
+    }
+    
+    .flyBox {
+    display: block;
+    position: relative;
+    margin: 1em auto;
+    top: 0px !important;
+    left: 0px !important;
+    right: 0px !important;
+    border: 0px !important;
+    width: 75% !important;
+    padding: 0.05em 1.2em;
+}
+
+.GridLayout.equal2ChildWidth {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 4fr;
+}
+
+.centerBox {
+    display: block;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    transform: translate(0px,0px);
+    WIDTH: fit-content;
+    PADDING: 1EM;
+    margin: auto;
+    width: 75%;
+}
+
+    .bookmarkHorizontalPoistion1{
+    top: 20vh;
+}    
+
+}
+
+/*animations*/
+.have-scroll-animation{
+    transition: all 0.7s linear 0.2s;
+}
+
+.aniType-MoveRightToLeft{
+    opacity: 0;
+    transform: translateX(50%);
+}
+
+.aniType-MoveRightToLeft.active-enter-animation {
+    opacity: 1 ;
+    transform: translateX(0);
+}
+
+.aniType-ScaleSmallToBig{
+    opacity: 0;
+    transform: scale(0);
+}
+
+.aniType-ScaleSmallToBig.active-enter-animation {
+    opacity: 1 ;
+    transform:scale(1);
+}
+
+.aniType-Blur{
+    filter: blur(10px) opacity(0);
+}
+
+.aniType-Blur.active-enter-animation {
+    filter: blur(0) opacity(1);
+}
+
+/* custum scroold bar */
+        /* width */
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #CC2E36; 
+ 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b3272e; 
+}
+
+#HeadlineGray{
+    text-align: center;
+    font-size: 3em;
+    font-weight: 800;
+    background-color: gainsboro;
+    padding:25px 100px 25px ;
+
+}
+
+.btn {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 120px;
+    height: 30px;
+    margin-right: 180px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 500;
+
+  }
+
+  .linkVid {
+    border-color: #e7e7e7;
+    color: black;
+  }
+  
+  .linkVid:hover {
+    background: #e7e7e7;
+  }
+
+  .btn a:link, a:visited {
+    text-decoration: none;
+    color: black;
+  }
+    
+
